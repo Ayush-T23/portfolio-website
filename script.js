@@ -1,43 +1,87 @@
-const roles = [
-  "AI Engineer",
+const words = [
+  "AI Automation Engineer",
   "Data Engineer",
+  "Machine Learning Engineer",
   "PySpark Developer",
-  "ML Engineer",
-  "AI Automation Expert"
+  "Databricks Enthusiast",
+  "Agentic AI Builder",
+  "MBA AI & Data Science Student"
 ];
 
-const typingText = document.querySelector(".typing");
+const typingElement = document.getElementById("typing");
 
-let roleIndex = 0;
-let charIndex = 0;
+let wordIndex = 0;
+let letterIndex = 0;
+let currentWord = "";
 let isDeleting = false;
 
 function typeEffect() {
 
-  const currentRole = roles[roleIndex];
+  currentWord = words[wordIndex];
 
-  if (isDeleting) {
-    typingText.textContent =
-      currentRole.substring(0, charIndex--);
+  if (!isDeleting) {
+
+    typingElement.textContent =
+      currentWord.substring(0, letterIndex + 1);
+
+    letterIndex++;
+
+    if (letterIndex === currentWord.length) {
+      isDeleting = true;
+
+      setTimeout(typeEffect, 1400);
+      return;
+    }
+
   } else {
-    typingText.textContent =
-      currentRole.substring(0, charIndex++);
+
+    typingElement.textContent =
+      currentWord.substring(0, letterIndex - 1);
+
+    letterIndex--;
+
+    if (letterIndex === 0) {
+
+      isDeleting = false;
+
+      wordIndex++;
+
+      if (wordIndex >= words.length) {
+        wordIndex = 0;
+      }
+    }
   }
 
-  let speed = isDeleting ? 50 : 110;
-
-  if (!isDeleting && charIndex === currentRole.length + 1) {
-    speed = 1500;
-    isDeleting = true;
-  }
-
-  if (isDeleting && charIndex === 0) {
-    isDeleting = false;
-    roleIndex = (roleIndex + 1) % roles.length;
-    speed = 400;
-  }
-
-  setTimeout(typeEffect, speed);
+  setTimeout(typeEffect, isDeleting ? 45 : 85);
 }
 
 typeEffect();
+
+
+
+/* SCROLL ANIMATION */
+
+const cards = document.querySelectorAll(".glass");
+
+
+function revealCards() {
+
+  cards.forEach((card, index) => {
+
+    const top = card.getBoundingClientRect().top;
+
+    if (top < window.innerHeight - 80) {
+
+      setTimeout(() => {
+        card.classList.add("show");
+      }, index * 80);
+
+    }
+
+  });
+
+}
+
+window.addEventListener("scroll", revealCards);
+
+revealCards();
