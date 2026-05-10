@@ -1,60 +1,44 @@
-const words = [
-  'AI Automation Engineer',
-  'Data Engineer',
-  'Machine Learning Engineer',
-  'PySpark Developer',
-  'Databricks Enthusiast',
-  'Agentic AI Builder',
-  'MBA AI & Data Science Student'
+const roles = [
+    "AI Engineer",
+    "Data Engineer",
+    "PySpark Developer",
+    "ML Engineer",
+    "AI Automation Expert"
 ];
 
-let wordIndex = 0;
+let roleIndex = 0;
 let charIndex = 0;
-let isDeleting = false;
+let typing = true;
 
-const typing = document.getElementById('typing');
+const typingText = document.querySelector(".typing");
 
 function typeEffect() {
 
-  const currentWord = words[wordIndex];
+    const currentRole = roles[roleIndex];
 
-  if (isDeleting) {
-    typing.textContent = currentWord.substring(0, charIndex--);
-  } else {
-    typing.textContent = currentWord.substring(0, charIndex++);
-  }
+    if (typing) {
 
-  let speed = isDeleting ? 50 : 100;
+        typingText.textContent =
+            currentRole.substring(0, charIndex++);
 
-  if (!isDeleting && charIndex === currentWord.length) {
-    speed = 1500;
-    isDeleting = true;
-  }
+        if (charIndex > currentRole.length) {
+            typing = false;
+            setTimeout(typeEffect, 1500);
+            return;
+        }
 
-  if (isDeleting && charIndex === 0) {
-    isDeleting = false;
-    wordIndex = (wordIndex + 1) % words.length;
-  }
+    } else {
 
-  setTimeout(typeEffect, speed);
+        typingText.textContent =
+            currentRole.substring(0, charIndex--);
+
+        if (charIndex < 0) {
+            typing = true;
+            roleIndex = (roleIndex + 1) % roles.length;
+        }
+    }
+
+    setTimeout(typeEffect, typing ? 120 : 60);
 }
 
 typeEffect();
-
-const cards = document.querySelectorAll('.glass');
-
-window.addEventListener('scroll', () => {
-
-  cards.forEach(card => {
-
-    const cardTop = card.getBoundingClientRect().top;
-
-    if(cardTop < window.innerHeight - 100){
-      card.classList.add('show');
-    }
-
-  });
-
-});
-
-window.dispatchEvent(new Event('scroll'));
