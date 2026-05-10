@@ -1,44 +1,43 @@
 const roles = [
-    "AI Engineer",
-    "Data Engineer",
-    "PySpark Developer",
-    "ML Engineer",
-    "AI Automation Expert"
+  "AI Engineer",
+  "Data Engineer",
+  "PySpark Developer",
+  "ML Engineer",
+  "AI Automation Expert"
 ];
-
-let roleIndex = 0;
-let charIndex = 0;
-let typing = true;
 
 const typingText = document.querySelector(".typing");
 
+let roleIndex = 0;
+let charIndex = 0;
+let isDeleting = false;
+
 function typeEffect() {
 
-    const currentRole = roles[roleIndex];
+  const currentRole = roles[roleIndex];
 
-    if (typing) {
+  if (isDeleting) {
+    typingText.textContent =
+      currentRole.substring(0, charIndex--);
+  } else {
+    typingText.textContent =
+      currentRole.substring(0, charIndex++);
+  }
 
-        typingText.textContent =
-            currentRole.substring(0, charIndex++);
+  let speed = isDeleting ? 50 : 110;
 
-        if (charIndex > currentRole.length) {
-            typing = false;
-            setTimeout(typeEffect, 1500);
-            return;
-        }
+  if (!isDeleting && charIndex === currentRole.length + 1) {
+    speed = 1500;
+    isDeleting = true;
+  }
 
-    } else {
+  if (isDeleting && charIndex === 0) {
+    isDeleting = false;
+    roleIndex = (roleIndex + 1) % roles.length;
+    speed = 400;
+  }
 
-        typingText.textContent =
-            currentRole.substring(0, charIndex--);
-
-        if (charIndex < 0) {
-            typing = true;
-            roleIndex = (roleIndex + 1) % roles.length;
-        }
-    }
-
-    setTimeout(typeEffect, typing ? 120 : 60);
+  setTimeout(typeEffect, speed);
 }
 
 typeEffect();
