@@ -11,6 +11,7 @@ body{
     color:white;
     overflow-x:hidden;
 }
+
 /* Image */
 .hero-image img{
     width: 100%;
@@ -74,42 +75,207 @@ body{
 /* HEADER */
 
 header{
-    width:100%;
-    padding:28px 8%;
+    position: fixed;
 
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
+    top: 20px;
+    left: 5%;
 
-    position:fixed;
-    top:0;
+    transform: translateX(-50%);
 
-    background:rgba(5,8,22,0.65);
+    width: 90%;
+    max-width: 1400px;
 
-    backdrop-filter:blur(12px);
+    padding: 18px 40px;
 
-    z-index:999;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    border-radius: 20px;
+
+    background: rgba(10, 15, 35, 0.45);
+
+    backdrop-filter: blur(18px);
+
+    border: 1px solid rgba(255,255,255,0.08);
+
+    box-shadow:
+      0 8px 30px rgba(0,0,0,0.35),
+      0 0 25px rgba(0,217,255,0.08);
+
+    z-index: 999;
+
+
+    transition:
+    top 0.55s ease,
+    opacity 0.55s ease,
+    filter 0.55s ease,
+    transform 0.55s ease;
+
 }
+
 
 .logo{
     font-size:40px;
     font-weight:800;
+
+    color:white;
+
+    letter-spacing:1px;
+
+    background:linear-gradient(
+        90deg,
+        #ffffff,
+        #00d9ff,
+        #6c63ff
+    );
+
+    background-size:250%;
+
+    animation:logoGlow 6s linear infinite;
+
+    -webkit-background-clip:text;
+    -webkit-text-fill-color:transparent;
+}
+@keyframes logoGlow{
+
+    0%{
+        background-position:0%;
+    }
+
+    100%{
+        background-position:250%;
+    }
 }
 
 nav{
     display:flex;
     gap:45px;
 }
-
 nav a{
+
+    position:relative;
+
+    display:inline-block;
+
     text-decoration:none;
+
     color:white;
+
     font-size:18px;
-    transition:0.3s;
+    font-weight:600;
+
+    padding:8px 0;
+
+    transition:0.3s ease;
 }
 
+/* HOVER */
+
 nav a:hover{
+
     color:#00d9ff;
+
+    transform:translateY(-3px);
+}
+/* HIDE NAVBAR ON SCROLL */
+
+header.hide-nav{
+
+    top:-120px;
+
+    opacity:0;
+
+    filter:blur(12px);
+
+    transform:
+    translateX(-50%)
+    scale(0.95);
+
+    pointer-events:none;
+}
+/* UNDERLINE */
+
+nav a::after{
+
+    content:'';
+
+    position:absolute;
+
+    left:0;
+    bottom:-5px;
+
+    width:0%;
+    height:3px;
+
+    border-radius:50px;
+
+    background:linear-gradient(
+        90deg,
+        #00d9ff,
+        #6c63ff
+    );
+
+    transition:0.4s ease;
+}
+
+nav a:hover::after{
+
+    width:100%;
+}
+
+/* GLOW EFFECT */
+
+nav a::before{
+
+    content:'';
+
+    position:absolute;
+
+    inset:-8px;
+
+    border-radius:12px;
+
+    background:rgba(0,217,255,0.08);
+
+    opacity:0;
+
+    z-index:-1;
+
+    transition:0.35s ease;
+}
+
+nav a:hover::before{
+
+    opacity:1;
+}
+
+/* MOBILE */
+
+@media(max-width:768px){
+
+    header{
+        width:95%;
+
+        padding:20px;
+
+        flex-direction:column;
+
+        gap:18px;
+    }
+
+    nav{
+        gap:18px;
+
+        flex-wrap:wrap;
+
+        justify-content:center;
+    }
+
+    .logo{
+        font-size:32px;
+    }
+
 }
 
 /* GLASS EFFECT */
@@ -140,10 +306,68 @@ nav a:hover{
 }
 
 .hero-image-card{
-    padding:14px;
-    border-radius:35px;
+   position: relative;
 
-    animation:float 4s ease-in-out infinite;
+    padding: 10px;
+
+    border-radius: 35px;
+
+    overflow: hidden;
+
+    animation: floatImage 4s ease-in-out infinite;
+
+    background: rgba(255,255,255,0.05);
+
+    border: 1px solid rgba(255,255,255,0.08);
+
+    backdrop-filter: blur(14px);
+
+    box-shadow:
+      0 0 25px rgba(0,217,255,0.15),
+      0 0 60px rgba(123,97,255,0.12);
+
+}
+.hero-image-card::before{
+    content: "";
+
+    position: absolute;
+    inset: -3px;
+
+    border-radius: 40px;
+
+    background: linear-gradient(
+        45deg,
+        #00d9ff,
+        #7b61ff,
+        #00d9ff,
+        #7b61ff
+    );
+
+    background-size: 300%;
+
+    z-index: -1;
+
+    animation: borderGlow 6s linear infinite;
+}
+.hero-image-card img{
+    width: 100%;
+    display: block;
+
+    border-radius: 28px;
+
+    transition: 0.5s ease;
+
+    filter:
+      brightness(1.03)
+      contrast(1.05)
+      saturate(1.05);
+}
+
+
+/* IMAGE HOVER */
+
+.hero-image-card:hover img{
+    transform: scale(1.04);
 }
 
 @keyframes float{
