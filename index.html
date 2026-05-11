@@ -3,21 +3,33 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
   <title>Ayush Tiwari | AI & Data Science Portfolio</title>
 
   <link rel="stylesheet" href="style.css" />
 
+  <!-- FONT AWESOME -->
   <link
     rel="stylesheet"
     href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
   />
+
+  <!-- AOS -->
+  <link
+    rel="stylesheet"
+    href="https://unpkg.com/aos@2.3.4/dist/aos.css"
+  />
+
 </head>
+
 <body>
 
   <div class="bg-blur blur1"></div>
   <div class="bg-blur blur2"></div>
 
-  <header>
+  <!-- HEADER -->
+  <header data-aos="fade-down">
+
     <div class="logo">Ayush Tiwari</div>
 
     <nav>
@@ -27,34 +39,54 @@
       <a href="#projects">Projects</a>
       <a href="#contact">Contact</a>
     </nav>
+
   </header>
 
+  <!-- HERO SECTION -->
   <section class="hero" id="home">
 
-    <div class="hero-left glass hero-image-card">
+    <div
+      class="hero-left glass hero-image-card"
+      data-aos="zoom-in"
+      data-aos-duration="1500"
+    >
       <img src="yourphoto.png" alt="Ayush Tiwari" />
     </div>
 
-    <div class="hero-right">
+    <div
+      class="hero-right"
+      data-aos="fade-left"
+      data-aos-duration="1500"
+    >
 
-      <h3>Hello, I'm</h3>
+      <h3 data-aos="fade-up" data-aos-delay="100">
+        Hello, I'm
+      </h3>
 
-      <h1>
+      <h1 data-aos="fade-up" data-aos-delay="300">
         Ayush <span>Tiwari</span>
       </h1>
 
-      <h2>
+      <h2 data-aos="fade-up" data-aos-delay="500">
         I'm a <span id="typing"></span>
       </h2>
 
-      <p class="hero-description">
+      <p
+        class="hero-description"
+        data-aos="fade-up"
+        data-aos-delay="700"
+      >
         MBA (AI & Data Science) student passionate about AI Automation,
         Machine Learning, Data Engineering, and scalable ETL systems.
         Experienced with Databricks, PySpark, n8n, AWS, SQL,
         and AI-powered workflow automation.
       </p>
 
-      <div class="hero-buttons">
+      <div
+        class="hero-buttons"
+        data-aos="zoom-in"
+        data-aos-delay="900"
+      >
 
         <a
           href="resume.pdf"
@@ -93,42 +125,75 @@
 
   </section>
 
+  <!-- ABOUT -->
+  <section
+    class="about glass"
+    id="about"
+    data-aos="fade-up"
+  >
 
-  <section class="about glass" id="about">
-
-    <h2 class="section-title">About <span>Me</span></h2>
+    <h2 class="section-title">
+      About <span>Me</span>
+    </h2>
 
     <p>
-  I am an MBA (AI & Data Science) student passionate about building intelligent <span class="highlight">AI-powered systems</span>, scalable ETL pipelines, and modern data-driven solutions.
+      I am an MBA (AI & Data Science) student passionate about building intelligent
+      <span class="highlight">AI-powered systems</span>,
+      scalable ETL pipelines, and modern data-driven solutions.
 
-  My expertise includes AI Automation, Data Engineering, Machine Learning, and cloud-based analytics using technologies like Python, PySpark, Databricks, SQL, AWS, Snowflake, Airflow, and n8n.
+      My expertise includes AI Automation, Data Engineering,
+      Machine Learning, and cloud-based analytics using technologies like
+      Python, PySpark, Databricks, SQL, AWS, Snowflake,
+      Airflow, and n8n.
 
-  I enjoy solving real-world problems through automation workflows, LLM integrations, predictive models, and scalable data architectures that improve efficiency and decision-making.
+      I enjoy solving real-world problems through automation workflows,
+      LLM integrations, predictive models, and scalable data architectures
+      that improve efficiency and decision-making.
     </p>
-<div class="gradient-line"></div>
+
+    <div class="gradient-line"></div>
+
     <div class="about-grid">
 
-      <div class="about-card glass">
+      <div
+        class="about-card glass"
+        data-aos="flip-left"
+        data-aos-delay="100"
+      >
         <i class="fas fa-brain"></i>
+
         <h3>AI Automation</h3>
+
         <p>
           Building intelligent AI-powered workflows using
           n8n, Gemini API, and LLM agents.
         </p>
       </div>
 
-      <div class="about-card glass">
+      <div
+        class="about-card glass"
+        data-aos="flip-left"
+        data-aos-delay="300"
+      >
         <i class="fas fa-database"></i>
+
         <h3>Data Engineering</h3>
+
         <p>
           Building scalable ETL pipelines using
           Databricks, PySpark, Delta Lake, and SQL.
         </p>
       </div>
 
-      <div class="about-card glass">
+      <div
+        class="about-card glass"
+        data-aos="flip-left"
+        data-aos-delay="500"
+      >
         <i class="fas fa-robot"></i>
+
         <h3>Machine Learning</h3>
+
         <p>
           Developing ML models using Scikit-learn,
           NLP, Ridge Regression, and SVM.
@@ -139,143 +204,159 @@
 
   </section>
 
+  <!-- SKILLS -->
+  <section
+    class="skills-section"
+    id="skills"
+    data-aos="fade-up"
+  >
 
-<!-- SKILLS SECTION -->
+    <div class="section-glow glow2"></div>
 
-<section class="skills-section" id="skills">
+    <h2 class="section-title">
+      Tech <span>Stack</span>
+    </h2>
 
-  <div class="section-glow glow2"></div>
+    <p class="skills-subtitle">
+      Skilled in Python, PySpark, SQL, Databricks, AWS,
+      Snowflake, Machine Learning, NLP, Flask, n8n,
+      LLM Integration, ETL Pipelines, Data Warehousing,
+      Git/GitHub, Power BI, TensorFlow,
+      and AI Workflow Automation.
+    </p>
 
-  <h2 class="section-title">
-    Tech <span>Stack</span>
-  </h2>
+    <div class="gradient-line"></div>
 
-<p class="skills-subtitle">
-  Skilled in Python, PySpark, SQL, Databricks, AWS, Snowflake,
-  Machine Learning, NLP, Flask, n8n, LLM Integration,
-  ETL Pipelines, Data Warehousing, Git/GitHub,
-  Power BI, TensorFlow, and AI Workflow Automation.
-</p>
-<div class="gradient-line"></div>
-  <div class="skills-grid">
+<div class="skills-grid">
 
-  <div class="skill glass">
-    <img src="https://skillicons.dev/icons?i=python" />
-    <span>Python</span>
+    <div class="skill glass"data-aos="zoom-in-up">
+     <img src="https://cdn.worldvectorlogo.com/logos/power-bi.svg" />
+    <span>Power BI</span>
   </div>
-
-  <div class="skill glass">
+ 
+  <div class="skill glass"data-aos="zoom-in-up">
     <img src="https://skillicons.dev/icons?i=mysql" />
     <span>SQL</span>
   </div>
 
-  <div class="skill glass">
+  <div class="skill glass"data-aos="zoom-in-up">
     <img src="https://skillicons.dev/icons?i=postgres" />
     <span>PostgreSQL</span>
   </div>
 
-  <div class="skill glass">
+  <div class="skill glass"data-aos="zoom-in-up">
     <img src="https://skillicons.dev/icons?i=sklearn" />
     <span>Scikit Learn</span>
   </div>
 
-  <div class="skill glass">
+  <div class="skill glass"data-aos="zoom-in-up">
     <img src="https://skillicons.dev/icons?i=aws" />
     <span>AWS</span>
   </div>
 
-  <div class="skill glass">
+  <div class="skill glass"data-aos="zoom-in-up">
     <img src="https://skillicons.dev/icons?i=git" />
     <span>Git</span>
   </div>
 
-  <div class="skill glass">
+  <div class="skill glass"data-aos="zoom-in-up">
     <img src="https://skillicons.dev/icons?i=github" />
     <span>GitHub</span>
   </div>
 
-  <div class="skill glass">
+  <div class="skill glass"data-aos="zoom-in-up">
     <img src="https://skillicons.dev/icons?i=vscode" />
     <span>VS Code</span>
   </div>
 
-  <div class="skill glass">
+  <div class="skill glass"data-aos="zoom-in-up">
     <img src="https://cdn.simpleicons.org/apachespark/E25A1C" />
     <span>PySpark</span>
   </div>
 
-  <div class="skill glass">
+  <div class="skill glass"data-aos="zoom-in-up">
     <img src="https://cdn.simpleicons.org/databricks/FF3621" />
     <span>Databricks</span>
   </div>
 
-  <div class="skill glass">
+  <div class="skill glass"data-aos="zoom-in-up">
     <img src="https://cdn.simpleicons.org/snowflake/29B5E8" />
     <span>Snowflake</span>
   </div>
 
-  <div class="skill glass">
-    <img src="https://cdn.simpleicons.org/apachehadoop/66CCFF" />
-    <span>Hadoop</span>
-  </div>
-
-  <div class="skill glass">
+  <div class="skill glass"data-aos="zoom-in-up">
     <img src="https://cdn.simpleicons.org/apache/CA2138" />
     <span>Apache Spark</span>
   </div>
 
-  <div class="skill glass">
+  <div class="skill glass"data-aos="zoom-in-up">
     <img src="https://cdn.simpleicons.org/docker/2496ED" />
     <span>ETL Pipelines</span>
   </div>
 
-  <div class="skill glass">
-     <img src="https://cdn.worldvectorlogo.com/logos/power-bi.svg" />
-    <span>Power BI</span>
+ <div class="skill glass"data-aos="zoom-in-up">
+    <img src="https://skillicons.dev/icons?i=python" />
+    <span>Python</span>
   </div>
 
-  <div class="skill glass">
+  <div class="skill glass"data-aos="zoom-in-up">
     <img src="https://cdn.simpleicons.org/snowflake/29B5E8" />
     <span>Data Warehousing</span>
   </div>
 
-  <div class="skill glass">
-   <img src="https://cdn.simpleicons.org/huggingface/FFD21E" />
-    <span>RAG</span>
-  </div>
+  <div class="skill glass" data-aos="zoom-in-up">
+  <img src="https://cdn.simpleicons.org/apacheairflow/017CEE" />
+  <span>Apache Airflow</span>
+</div>
 
-  <div class="skill glass">
+  <div class="skill glass"data-aos="zoom-in-up">
     <img src="https://cdn.simpleicons.org/n8n/EA4B71" />
     <span>n8n Automation</span>
   </div>
 
-</div>
+<div class="skill glass"data-aos="zoom-in-up">
+   <img src="https://cdn.simpleicons.org/huggingface/FFD21E" />
+    <span>RAG</span>
+  </div>
 
-</section>
+    </div>
 
-<section class="projects" id="projects">
+  </section>
+
+  <!-- PROJECTS -->
+  <section
+    class="projects"
+    id="projects"
+    data-aos="fade-up"
+  >
 
     <h2 class="section-title">Projects</h2>
+
     <div class="gradient-line"></div>
 
     <div class="project-grid">
 
-        <!-- PROJECT 1 -->
-        <div class="project-card glass">
+      <!-- PROJECT 1 -->
+      <div
+        class="project-card glass"
+        data-aos="fade-up"
+        data-aos-delay="100"
+      >
 
-            <div class="project-links">
-                <a href="https://github.com/Ayush-T23/Agentic_AI_Workflows/tree/main/AI-Recruitment-Workflow"
-                   target="_blank">
-                    <i class="fab fa-github"></i>
-                </a>
-            </div>
+        <div class="project-links">
+          <a
+            href="https://github.com/Ayush-T23/Agentic_AI_Workflows/tree/main/AI-Recruitment-Workflow"
+            target="_blank"
+          >
+            <i class="fab fa-github"></i>
+          </a>
+        </div>
 
-            <div class="project-top">
-                <i class="fas fa-user-check"></i>
-            </div>
+        <div class="project-top">
+          <i class="fas fa-user-check"></i>
+        </div>
 
-            <h3>AI Resume Screening & HR Automation</h3>
-
+        <h3>AI Resume Screening & HR Automation</h3>
             <p>
                 Built an AI-powered HR automation system using n8n,
                 Gemini API, Gmail, Slack, and Google Calendar to automate
@@ -287,27 +368,30 @@
                 <span>Gemini API</span>
                 <span>Automation</span>
             </div>
+      </div>
 
+      <!-- PROJECT 2 -->
+      <div
+        class="project-card glass"
+        data-aos="fade-up"
+        data-aos-delay="300"
+      >
+
+        <div class="project-links">
+          <a
+            href="https://github.com/Ayush-T23/Databricks-Ecommerce-Project"
+            target="_blank"
+          >
+            <i class="fab fa-github"></i>
+          </a>
         </div>
 
+        <div class="project-top">
+          <i class="fas fa-database"></i>
+        </div>
 
-        <!-- PROJECT 2 -->
-        <div class="project-card glass">
-
-            <div class="project-links">
-                <a href="https://github.com/Ayush-T23/Databricks-Ecommerce-Project"
-                   target="_blank">
-                    <i class="fab fa-github"></i>
-                </a>
-            </div>
-
-            <div class="project-top">
-                <i class="fas fa-database"></i>
-            </div>
-
-            <h3>Databricks Lakehouse Pipeline</h3>
-
-            <p>
+        <h3>Databricks Lakehouse Pipeline</h3>
+        <p>
                 Developed Medallion Architecture-based ETL pipelines using
                 PySpark, Delta Lake, and Databricks for scalable analytics workflows.
             </p>
@@ -317,27 +401,27 @@
                 <span>PySpark</span>
                 <span>Delta Lake</span>
             </div>
+      </div>
 
-        </div>
-
-
-        <!-- PROJECT 3 -->
-        <div class="project-card glass">
-
-            <div class="project-links">
+      <!-- PROJECT 3 -->
+      <div
+        class="project-card glass"
+        data-aos="fade-up"
+        data-aos-delay="500"
+      >
+       <div class="project-links">
                 <a href="https://github.com/Ayush-T23/Agentic_AI_Workflows/tree/38ac8c1b8d67cdcf40daf1f0051021408724a4a9/AI%20Restaurant%20Agent%20Automation"
                    target="_blank">
                     <i class="fab fa-github"></i>
                 </a>
             </div>
 
-            <div class="project-top">
-                <i class="fas fa-robot"></i>
-            </div>
+        <div class="project-top">
+          <i class="fas fa-robot"></i>
+        </div>
 
-            <h3>AI Restaurant Automation</h3>
-
-            <p>
+        <h3>AI Restaurant Automation</h3>
+        <p>
                 Engineered AI agents and workflow automation systems for restaurant
                 order handling using LLMs, Google Sheets, and n8n.
             </p>
@@ -347,56 +431,60 @@
                 <span>n8n</span>
                 <span>AI Agents</span>
             </div>
+      </div>
 
-        </div>
-
-
-        <!-- PROJECT 4 -->
-        <div class="project-card glass">
-
-            <div class="project-links">
+      <!-- PROJECT 4 -->
+      <div
+        class="project-card glass"
+        data-aos="fade-up"
+        data-aos-delay="700"
+      >
+<div class="project-links">
                 <a href="https://github.com/Ayush-T23/House-Price-Predictor"
                    target="_blank">
                     <i class="fab fa-github"></i>
                 </a>
             </div>
+        <div class="project-top">
+          <i class="fas fa-chart-line"></i>
+        </div>
 
-            <div class="project-top">
-                <i class="fas fa-chart-line"></i>
-            </div>
-
-            <h3>House Price Prediction App</h3>
-
-            <p>
-                Built and deployed a machine learning web application using Flask
-                and Ridge Regression for house price prediction.
+        <h3>House Price Prediction App</h3>
+        <p>
+                Developed a Flask web app for house price prediction using
+                Scikit-learn, Ridge Regression, and SVM with a user-friendly interface.
             </p>
 
             <div class="project-tags">
                 <span>Flask</span>
-                <span>ML</span>
-                <span>Python</span>
+                <span>Scikit-learn</span>
+                <span>Machine Learning</span>
             </div>
-
-        </div>
+      </div>
 
     </div>
 
-</section>
-
   </section>
 
+  <!-- CONTACT -->
+  <section
+    class="contact glass"
+    id="contact"
+    data-aos="zoom-in"
+  >
 
-  <section class="contact glass" id="contact">
+    <h2 class="section-title">
+      Contact <span>Me</span>
+    </h2>
 
-    <h2 class="section-title">Contact <span>Me</span></h2>
-<div class="gradient-line"></div>
+    <div class="gradient-line"></div>
+
     <p>
-      Interested in collaborating, internships, AI projects,
-      Data Engineering, or Automation systems?
+      Interested in collaborating, internships,
+      AI projects, Data Engineering,
+      or Automation systems?
     </p>
-
-    <div class="contact-links">
+<div class="contact-links"data-aos="fade-up">
 
       <a href="mailto:tiwariayush7487@gmail.com">
         <i class="fas fa-envelope"></i>
@@ -420,15 +508,27 @@
       </a>
 
     </div>
-
   </section>
 
-
-  <footer>
+  <!-- FOOTER -->
+  <footer data-aos="fade-up">
     <p>© 2026 Ayush Tiwari | AI & Data Science Portfolio</p>
   </footer>
 
+  <!-- AOS SCRIPT -->
+  <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+
+  <script>
+    AOS.init({
+      duration: 1200,
+      once: true,
+      offset: 100
+    });
+  </script>
 
   <script src="script.js"></script>
+
 </body>
 </html>
+
+  
