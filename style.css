@@ -1065,24 +1065,32 @@ footer{
     flex-wrap: wrap;
     gap: 18px;
   }
-/* REMOVE the outer wrapper glow/background */
-.hero-image {
-    background: none !important;
-    box-shadow: none !important;
-    border: none !important;
-    border-radius: 0 !important;
-    padding: 0 !important;
-}
 
-/* Apply the neon border directly on the img */
-.hero-image img {
-    border: 2px solid rgba(0, 220, 255, 0.8);
-    border-radius: 16px;
+    @media (max-width: 768px) {
+
+  /* Override .glass img rule bleeding into hero */
+  .hero-image img {
+    width: 280px !important;
+    max-width: 90vw !important;
+    border: 2px solid rgba(0, 220, 255, 0.8) !important;
+    border-radius: 16px !important;
     box-shadow: 
-        0 0 8px rgba(0, 220, 255, 0.6),
-        0 0 20px rgba(0, 220, 255, 0.3),
-        inset 0 0 8px rgba(0, 220, 255, 0.1);
-    display: block;
+      0 0 8px rgba(0, 220, 255, 0.6),
+      0 0 20px rgba(0, 220, 255, 0.3),
+      inset 0 0 8px rgba(0, 220, 255, 0.1) !important;
+    flex-shrink: unset !important;
+  }
+
+  /* Strip the outer wrapper — no background, no padding */
+  .hero-image {
+    background: none !important;
+    padding: 0 !important;
+    border: none !important;
+    box-shadow: none !important;
+    border-radius: 0 !important;
+    margin-top: 40px;
+  }
+
 }
   /* ─────────────────────────────────────────
      FIX 1 → NAVBAR (was overflowing screen)
