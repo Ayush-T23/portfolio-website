@@ -1031,21 +1031,6 @@ footer{
     padding-top: 180px;
   }
 
-.hero-image {
-    border: 2px solid rgba(0, 220, 255, 0.8);
-    border-radius: 16px;
-    box-shadow: 
-        0 0 8px rgba(0, 220, 255, 0.6),
-        0 0 20px rgba(0, 220, 255, 0.3),
-        inset 0 0 8px rgba(0, 220, 255, 0.1);
-}
-
-  .hero-image img {
-    width: 280px;
-    max-width: 90vw;
-    object-fit: cover;
-  }
-
   .hero-content {
     width: 100%;
     padding: 0 20px;
