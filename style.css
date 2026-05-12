@@ -1065,7 +1065,25 @@ footer{
     flex-wrap: wrap;
     gap: 18px;
   }
+/* REMOVE the outer wrapper glow/background */
+.hero-image {
+    background: none !important;
+    box-shadow: none !important;
+    border: none !important;
+    border-radius: 0 !important;
+    padding: 0 !important;
+}
 
+/* Apply the neon border directly on the img */
+.hero-image img {
+    border: 2px solid rgba(0, 220, 255, 0.8);
+    border-radius: 16px;
+    box-shadow: 
+        0 0 8px rgba(0, 220, 255, 0.6),
+        0 0 20px rgba(0, 220, 255, 0.3),
+        inset 0 0 8px rgba(0, 220, 255, 0.1);
+    display: block;
+}
   /* ─────────────────────────────────────────
      FIX 1 → NAVBAR (was overflowing screen)
   ───────────────────────────────────────── */
