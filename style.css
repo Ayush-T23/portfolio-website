@@ -1022,14 +1022,6 @@ footer{
 @media (max-width: 768px) {
 
   /* ── FIX 1: HERO SECTION ── */
-  .hero {
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    gap: 50px;
-    padding-top: 180px;
-  }
 
   .hero-content {
     width: 100%;
