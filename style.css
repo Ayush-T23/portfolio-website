@@ -1016,3 +1016,161 @@ footer{
 
 }
 
+/* =========================
+   MOBILE RESPONSIVE FIXES
+========================= */
+@media (max-width: 768px) {
+
+  /* ── FIX 1: HERO SECTION ── */
+  .hero {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    gap: 50px;
+    padding-top: 180px;
+  }
+
+  .hero-image {
+    margin-top: 40px;
+  }
+
+  .hero-image img {
+    width: 280px;
+    max-width: 90vw;
+    object-fit: cover;
+  }
+
+  .hero-content {
+    width: 100%;
+    padding: 0 20px;
+  }
+
+  .hero-content h1 {
+    font-size: 65px;
+    line-height: 1.1;
+  }
+
+  .hero-content h2 {
+    font-size: 32px;
+    line-height: 1.3;
+  }
+
+  .hero-content p {
+    font-size: 18px;
+    line-height: 1.8;
+  }
+
+  .hero-buttons {
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 18px;
+  }
+
+  /* ─────────────────────────────────────────
+     FIX 1 → NAVBAR (was overflowing screen)
+  ───────────────────────────────────────── */
+  header {
+    width: 92%;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 14px 16px;       /* tighter padding so nothing overflows */
+    top: 15px;
+    box-sizing: border-box;   /* ← KEY: padding included in width calc  */
+    overflow: hidden;         /* hard stop — nothing bleeds outside     */
+  }
+
+  /* Stack logo + nav vertically, both centred */
+  header > * {
+    width: 100%;
+  }
+
+  .logo {
+    font-size: 24px;
+    text-align: center;
+    display: block;
+  }
+
+  nav {
+    display: flex;
+    flex-wrap: wrap;            /* items wrap before they overflow        */
+    justify-content: center;
+    align-items: center;
+    gap: 10px 20px;             /* row-gap col-gap                        */
+    margin-top: 10px;
+    width: 100%;
+  }
+
+  nav a {
+    font-size: 14px;            /* slightly smaller so 4–5 links fit      */
+    white-space: nowrap;
+  }
+
+  /* Hide-nav state stays clean */
+  header.hide-nav {
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    top: -130px;
+    filter: none !important;
+    backdrop-filter: none !important;
+  }
+
+  /* ─────────────────────────────────────────
+     FIX 2 → ABOUT CARDS (text was clipped)
+  ───────────────────────────────────────── */
+  .about-grid {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+  }
+
+  .glass {
+    width: 90%;
+    max-width: 340px;
+    margin: 0 auto;
+
+    /* ── CRITICAL FIXES FOR CLIPPED TEXT ── */
+    height: auto !important;          /* never a fixed height that clips   */
+    min-height: unset !important;     /* remove any min-height constraints */
+    overflow: visible !important;     /* text must NOT be hidden           */
+    padding: 32px 24px;               /* generous inner breathing room     */
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 16px;
+  }
+
+  /* Icon inside card — keep it from squishing text */
+  .glass svg,
+  .glass img,
+  .glass i,
+  .glass .card-icon {
+    flex-shrink: 0;
+  }
+
+  /* Card title */
+  .glass h3,
+  .glass .card-title {
+    font-size: 22px;
+    line-height: 1.25;
+    word-break: break-word;
+    white-space: normal;        /* allow wrapping, never truncate         */
+    overflow: visible;
+    width: 100%;
+  }
+
+  /* Card body text */
+  .glass p,
+  .glass .card-desc {
+    font-size: 15px;
+    line-height: 1.7;
+    word-break: break-word;
+    white-space: normal;
+    overflow: visible;
+    width: 100%;
+  }
+}
